@@ -8,13 +8,14 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 class EventServiceProvider extends ServiceProvider
 {
     /**
-     * The event listener mappings for the application.
+     * Сопоставление слушателей событий для приложения.
      *
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+        // Слушатель для события завершения заказа
+        'App\Events\OrderFinished' => [
+            'App\Listeners\SendFinishedOrderEmails',
         ],
     ];
 
